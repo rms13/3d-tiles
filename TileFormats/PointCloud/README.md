@@ -131,7 +131,7 @@ Points that make up distinct features of the point cloud may be batched together
 This is useful for per-object picking and storing application-specific metadata for declarative styling and application-specific use cases such as populating a UI or issuing a REST API request on a per-object instead of per-point basis.
 
 The `BATCH_ID` semantic may have a `componentType` of `UNSIGNED_BYTE`, `UNSIGNED_SHORT`, or `UNSIGNED_INT`. When `componentType` is not present, `UNSIGNED_SHORT` is used.
-The global semantic `BATCH_LENGTH` defines the number of unique `batchId` values, similar to the `batchLength` field in the [Batched 3D Model](./Batched3DModel/README.md) header.
+The global semantic `BATCH_LENGTH` defines the number of unique `batchId` values, similar to the `batchLength` field in the [Batched 3D Model](../Batched3DModel/README.md) header. The `batchId values can range from  `0` to `BATCH_LENGTH - 1`.
 
 ### Examples
 
@@ -149,7 +149,7 @@ var featureTableJSON = {
     }
 };
 
-var featureTableBinary = new Buffer(new Float32Array([
+var featureTableBinary = Buffer.from(new Float32Array([
     0.0, 0.0, 0.0, 
     1.0, 0.0, 0.0,
     0.0, 0.0, 1.0,
@@ -173,14 +173,14 @@ var featureTableJSON = {
     }
 };
 
-var positionBinary = new Buffer(new Float32Array([
+var positionBinary = Buffer.from(new Float32Array([
     0.0, 0.0, 0.0, 
     1.0, 0.0, 0.0, 
     0.0, 0.0, 1.0, 
     1.0, 0.0, 1.0
 ]).buffer);
 
-var colorBinary = new Buffer(new Uint8Array([
+var colorBinary = Buffer.from(new Uint8Array([
     255, 0, 0,
     0, 255, 0,
     0, 0, 255,
@@ -206,14 +206,14 @@ var featureTableJSON = {
     }
 };
 
-var positionQuantizedBinary = new Buffer(new Uint16Array([
+var positionQuantizedBinary = Buffer.from(new Uint16Array([
     0, 0, 0,
     65535, 0, 0,
     0, 0, 65535,
     65535, 0, 65535
 ]).buffer);
 
-var normalOct16PBinary = new Buffer(new Uint8Array([
+var normalOct16PBinary = Buffer.from(new Uint8Array([
     128, 255,
     128, 255,
     128, 255,
@@ -240,14 +240,14 @@ var featureTableJSON = {
     }
 };
 
-var positionBinary = new Buffer(new Float32Array([
+var positionBinary = Buffer.from(new Float32Array([
     0.0, 0.0, 0.0,
     1.0, 0.0, 0.0,
     0.0, 0.0, 1.0,
     1.0, 0.0, 1.0
 ]).buffer);
 
-var batchIdBinary = new Buffer(new Uint8Array([
+var batchIdBinary = Buffer.from(new Uint8Array([
     0,
     0,
     1,
@@ -273,7 +273,7 @@ var featureTableJSON = {
     }
 };
 
-var featureTableBinary = new Buffer(new Float32Array([
+var featureTableBinary = Buffer.from(new Float32Array([
     0.0, 0.0, 0.0,
     1.0, 0.0, 0.0,
     0.0, 0.0, 1.0,
