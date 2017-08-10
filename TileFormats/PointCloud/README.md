@@ -141,6 +141,20 @@ These examples show how to generate JSON and binary buffers for the feature tabl
 
 This minimal example has four points on the corners of a unit length square.
 
+Using JSON only:
+```javascript
+var featureTableJSON = {
+    POINTS_LENGTH : 4,
+    POSITION : {
+        0.0, 0.0, 0.0, 
+        1.0, 0.0, 0.0,
+        0.0, 0.0, 1.0,
+        1.0, 0.0, 1.0
+    }
+};
+```
+
+Using JSON and binary buffer:
 ```javascript
 var featureTableJSON = {
     POINTS_LENGTH : 4,
@@ -159,7 +173,7 @@ var featureTableBinary = Buffer.from(new Float32Array([
 
 #### Positions and Colors
 
-The following example has four points (red, green, blue, and yellow) above the globe. Their positions are defined relative-to-center.
+The following example has four points (red, green, blue, and yellow) above the globe. Their positions are defined relative-to-center. The colors are defined using RGB property.
 
 ```javascript
 var featureTableJSON = {
